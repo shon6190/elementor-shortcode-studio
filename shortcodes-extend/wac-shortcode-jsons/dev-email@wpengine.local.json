@@ -1,0 +1,10 @@
+
+{
+    
+    "wac-test": {
+        "url": "widgets/wac-test/wac-test.php",
+        "name": "Wac test",
+        "handle": "wac_test",
+        "icon": "icons/wac-test.png"
+    }
+}
