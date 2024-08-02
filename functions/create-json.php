@@ -6,16 +6,6 @@ function addfiletojson($fileName)
     // check file exit for user email
     // append to the file
 
-    $current_user = wp_get_current_user();
-
-    if (!$current_user instanceof WP_User) {
-
-        return false;
-        // retun if user not found.
-    }
-
-    $user_email = $current_user->user_email;
-
     $Label = ucfirst(str_replace('-', ' ', $fileName));
     $shortcode_handle = str_replace("-", "_", $fileName);
 
@@ -27,7 +17,7 @@ function addfiletojson($fileName)
         "icon": "icons/' . $fileName . '.png"
     }';
 
-    $jsonname = SC_CORE_PATH . 'shortcodes-extend/ess-shortcode-jsons/' . $user_email . '.json';
+    $jsonname = SC_CORE_PATH . 'shortcodes-extend/ess-shortcode-jsons/' . $fileName . '.json';
     if (file_exists($jsonname)) {
         $existingDataArray = '';
         $existingData = file_get_contents($jsonname);
