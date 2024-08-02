@@ -5,11 +5,11 @@
  * @return void
  */
 
-function createCssAndJs($filePath, $name, $wac_shortcode_files)
+function createCssAndJs($filePath, $name, $ess_shortcode_files)
 {
     $createFlag = false;
 
-    foreach ($wac_shortcode_files as $shortcode_files) {
+    foreach ($ess_shortcode_files as $shortcode_files) {
         if (in_array($shortcode_files, ['css', 'scss', 'js'])) {
             $fileExtension = $shortcode_files;
             $shortcode_name = str_replace('-', '_', $name);

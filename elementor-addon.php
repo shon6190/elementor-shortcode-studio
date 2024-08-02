@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  * Any custom code should go inside Plugin Class in the plugin.php file.
  * @since 1.2.0
  */
-final class Wac_Elementor_Addon {
+final class Ess_Elementor_Addon {
 
 	/**
 	 * Plugin Version
@@ -65,7 +65,7 @@ final class Wac_Elementor_Addon {
 	 * @access public
 	 */
 	public function i18n() {
-		load_plugin_textdomain( 'wac-elementor' );
+		load_plugin_textdomain( 'ess-elementor' );
 	}
 
 	/**
@@ -119,9 +119,9 @@ final class Wac_Elementor_Addon {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor */
-			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'wac-elementor' ),
-			'<strong>' . esc_html__( 'Elementor Scaffolder', 'wac-elementor' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'wac-elementor' ) . '</strong>'
+			esc_html__( '"%1$s" requires "%2$s" to be installed and activated.', 'ess-elementor' ),
+			'<strong>' . esc_html__( 'Elementor Scaffolder', 'ess-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'ess-elementor' ) . '</strong>'
 		);
 
 		printf( '<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message );
@@ -142,9 +142,9 @@ final class Wac_Elementor_Addon {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'wac-elementor' ),
-			'<strong>' . esc_html__( 'Elementor Scaffolder', 'wac-elementor' ) . '</strong>',
-			'<strong>' . esc_html__( 'Elementor', 'wac-elementor' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'ess-elementor' ),
+			'<strong>' . esc_html__( 'Elementor Scaffolder', 'ess-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'Elementor', 'ess-elementor' ) . '</strong>',
 			self::MINIMUM_ELEMENTOR_VERSION
 		);
 
@@ -166,9 +166,9 @@ final class Wac_Elementor_Addon {
 
 		$message = sprintf(
 			/* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'wac-elementor' ),
-			'<strong>' . esc_html__( 'Elementor Scaffolder', 'wac-elementor' ) . '</strong>',
-			'<strong>' . esc_html__( 'PHP', 'wac-elementor' ) . '</strong>',
+			esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'ess-elementor' ),
+			'<strong>' . esc_html__( 'Elementor Scaffolder', 'ess-elementor' ) . '</strong>',
+			'<strong>' . esc_html__( 'PHP', 'ess-elementor' ) . '</strong>',
 			self::MINIMUM_PHP_VERSION
 		);
 
@@ -176,8 +176,8 @@ final class Wac_Elementor_Addon {
 	}
 }
 
-// Instantiate Wac_Elementor_Addon.
-new Wac_Elementor_Addon();
+// Instantiate Ess_Elementor_Addon.
+new Ess_Elementor_Addon();
 
 
 

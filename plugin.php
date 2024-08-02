@@ -17,7 +17,7 @@ class ShortcodeLoader
 
     public function __construct()
     {
-        $this->shortcode_json_dir = SC_CORE_PATH . 'shortcodes-extend/wac-shortcode-jsons';
+        $this->shortcode_json_dir = SC_CORE_PATH . 'shortcodes-extend/ess-shortcode-jsons';
         $this->load_files();
     }
 
@@ -65,9 +65,9 @@ class ElemAddonEss
     public function elementor_helper_init()
     {
         \Elementor\Plugin::instance()->elements_manager->add_category(
-            'wac-shortcodes',
+            'ess-shortcodes',
             [
-                'title' => 'WAC',
+                'title' => 'ES Studio',
                 'icon' => 'font'
             ],
             1
@@ -76,7 +76,7 @@ class ElemAddonEss
 
     public function enqueue_preview_style()
     {
-        wp_enqueue_style('wac_core_shortcode_icon_css', plugins_url('widget-icons/icon.css', __FILE__));
+        wp_enqueue_style('ess_core_shortcode_icon_css', plugins_url('widget-icons/icon.css', __FILE__));
     }
 
     public function on_widgets_registered()

@@ -27,7 +27,7 @@ function addfiletojson($fileName)
         "icon": "icons/' . $fileName . '.png"
     }';
 
-    $jsonname = SC_CORE_PATH . 'shortcodes-extend/wac-shortcode-jsons/' . $user_email . '.json';
+    $jsonname = SC_CORE_PATH . 'shortcodes-extend/ess-shortcode-jsons/' . $user_email . '.json';
     if (file_exists($jsonname)) {
         $existingDataArray = '';
         $existingData = file_get_contents($jsonname);

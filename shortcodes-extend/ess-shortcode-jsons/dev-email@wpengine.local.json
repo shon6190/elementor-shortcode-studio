@@ -1,0 +1,18 @@
+
+{
+    
+    "ess-test": {
+        "url": "widgets/ess-test/ess-test.php",
+        "name": "Ess test",
+        "handle": "ess_test",
+        "icon": "icons/ess-test.png"
+    }
+,
+    
+    "ess-jishnu": {
+        "url": "widgets/ess-jishnu/ess-jishnu.php",
+        "name": "Ess jishnu",
+        "handle": "ess_jishnu",
+        "icon": "icons/ess-jishnu.png"
+    }
+}

@@ -14,7 +14,7 @@ class ShortCodeListpage {
      */
     public function admin_includes_files() {
         wp_enqueue_script('shortcode-js', SC_CORE_URL .'assets/js/shortcode.js' );
-        wp_localize_script('shortcode-js', 'WACObj', array( 'loader_url' => SC_CORE_URL .'/shortcodes-extend/ajax-loader.svg' , 'ajaxurl' => admin_url('admin-ajax.php'), ));
+        wp_localize_script('shortcode-js', 'ESSObj', array( 'loader_url' => SC_CORE_URL .'/shortcodes-extend/ajax-loader.svg' , 'ajaxurl' => admin_url('admin-ajax.php'), ));
     }
 
     /**
@@ -109,25 +109,25 @@ class ShortCodeListpage {
         <h1 class="wp-heading-inline"> All Shortcodes</h1>
         <a href="javascript:void(0);" class="page-title-action">Add New</a>
         <hr class="wp-header-end">
-            <form method="post" id="wac-shortcodeFrm" class="shortcodefrm d-none">
+            <form method="post" id="ess-shortcodeFrm" class="shortcodefrm d-none">
                 <div class="form-group">
-                    <label for="wac_shortcode_name">ShortCode Name: (No special Characters)</label>
-                    <input type="text" id="wac_shortcode_name" class="alphabetic_only" name="wac_shortcode_name" required>
+                    <label for="ess_shortcode_name">ShortCode Name: (No special Characters)</label>
+                    <input type="text" id="ess_shortcode_name" class="alphabetic_only" name="ess_shortcode_name" required>
                 </div>
                  <div class="form-group file-upload">
                     <label for="file">Select Icon:</label>
                     <input type="file" id="shortcode_file" name="file" accept=".png">
                  </div>
-                 <input type="hidden"  name="action" value="wac_create_shortcode">
+                 <input type="hidden"  name="action" value="ess_create_shortcode">
                 <input type="submit" id="submitShortcode" value="Create">
                 <p class="response-msg"><p>
             </form>               
 
             
             <?php 
-            //$filename = SC_CORE_PATH . 'shortcodes-extend/wac-shortcode.json';
+            //$filename = SC_CORE_PATH . 'shortcodes-extend/ess-shortcode.json';
 
-            $shortcode_json_dir = SC_CORE_PATH . 'shortcodes-extend/wac-shortcode-jsons';
+            $shortcode_json_dir = SC_CORE_PATH . 'shortcodes-extend/ess-shortcode-jsons';
             $shortcode_json_fiels = scandir($shortcode_json_dir);
             $TableHtml = '';
             $tableContents = '';

@@ -1,16 +1,4 @@
-<?php 
-
-function buildPhpFile($filePath , $shortcode_handle , $shortcode_slug ,$name ){
-
-    // create a .php file for the Ui team to edit 
-    $htmlContent = '<h2>'. $name .'</h2>
-    <!--    Please add the HTML here and do not remove the clearfix Tag.    -->';
-    $htmlfile = file_put_contents( $filePath.'/render-'. $name.'.php', $htmlContent);
-    $htmlfileUrl = 'render-'.$name.'.php';
-
-    // create a php file for rentering the shortcode 
-$phpContent = '<?php /* PHP file content */';    
-$phpContent .= '
+<?php /* PHP file content */
 namespace EssElementorAddon\Widgets;
 use Elementor\Widget_Base;
 use Elementor\Controls_Manager;
@@ -18,31 +6,31 @@ use Elementor\Utils;
 
 defined("ABSPATH") || exit;
 
-class '. $shortcode_handle .' extends Widget_Base {
+class ess_jishnu extends Widget_Base {
 
     public function __construct($data = [], $args = null) {
         parent::__construct($data, $args);
 
-        wp_register_style( "'. $shortcode_slug .'-style-handle", plugins_url("/'. $name .'.css", __FILE__));
-        wp_register_script( "'. $shortcode_slug .'-script-handle", plugins_url("/'. $name .'.js", __FILE__), [ "elementor-frontend" ], "1.0.0", true );
+        wp_register_style( "ess-jishnu-style-handle", plugins_url("/ess-jishnu.css", __FILE__));
+        wp_register_script( "ess-jishnu-script-handle", plugins_url("/ess-jishnu.js", __FILE__), [ "elementor-frontend" ], "1.0.0", true );
     }
 
 
     public function get_style_depends() {
-        return [ "'. $shortcode_slug .'-style-handle" ];
+        return [ "ess-jishnu-style-handle" ];
     }
 
 
     public function get_script_depends() {
-        return [ "'. $shortcode_slug .'-script-handle" ];
+        return [ "ess-jishnu-script-handle" ];
     }
 
     public function get_name() {
-        return "'. $name .'";
+        return "ess-jishnu";
     }
 
     public function get_title() {
-        return esc_html__( "'. $name .'", "elementskit-lite" );
+        return esc_html__( "ess-jishnu", "elementskit-lite" );
     }
 
     public function get_categories() {
@@ -50,7 +38,7 @@ class '. $shortcode_handle .' extends Widget_Base {
     }
 
     public function get_icon() {
-        return "qd-icon qd-icon-'. $name .'";
+        return "qd-icon qd-icon-ess-jishnu";
     }
     
     protected function register_controls() {
@@ -80,20 +68,10 @@ class '. $shortcode_handle .' extends Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
         ob_start();
-        require("'. $htmlfileUrl .'");
+        require("render-ess-jishnu.php");
         $output = ob_get_contents();
         ob_end_clean();
         echo $output;
-        wp_enqueue_script("'. $name .'-js");
+        wp_enqueue_script("ess-jishnu-js");
     }
-}';
-    $renderFile = file_put_contents( $filePath.'/'. $name.'.php', $phpContent);
-    if($renderFile){
-        return $filePath.'/'. $name.'.php';
-    } else{
-        return false;
-    }    
-    return $phpFile;
 }
-
-?>

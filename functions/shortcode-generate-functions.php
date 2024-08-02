@@ -1,5 +1,5 @@
 <?php
-function WACCreateShortcode()
+function ESSCreateShortcode()
 {
     /**
      * FILTER_SANITIZE_STRING
@@ -7,12 +7,12 @@ function WACCreateShortcode()
     // foreach ($_POST as $key => $value) {
     //     $_POST[$key] = filter_var($value, FILTER_SANITIZE_STRING);
     // }
-    $shortcode_name = $_POST['wac_shortcode_name'];
-    $wac_shortcode_files = ['css', 'scss', 'js', 'img'];
-    $name = wac_format_text($shortcode_name);
-    $wac_shortcode_icon = $_FILES['file'];
-    // $icon_upload = icon_upload($wac_shortcode_icon ,  $name);
-    $icon_upload = icon_upload($wac_shortcode_icon, $name);
+    $shortcode_name = $_POST['ess_shortcode_name'];
+    $ess_shortcode_files = ['css', 'scss', 'js', 'img'];
+    $name = ess_format_text($shortcode_name);
+    $ess_shortcode_icon = $_FILES['file'];
+    // $icon_upload = icon_upload($ess_shortcode_icon ,  $name);
+    $icon_upload = icon_upload($ess_shortcode_icon, $name);
     if ($icon_upload) {
         create_font_css($icon_upload, $name);
     }
@@ -28,7 +28,7 @@ function WACCreateShortcode()
     } else {
         if (mkdir($file_path, 0777, true)) {
             // Create CSS and Js file
-            $createFilesAndFolder = createCssAndJs($file_path, $name, $wac_shortcode_files);
+            $createFilesAndFolder = createCssAndJs($file_path, $name, $ess_shortcode_files);
             // Create PHP file
             $shortcode_handle = str_replace("-", "_", $name);
 
@@ -69,6 +69,6 @@ function WACCreateShortcode()
         }
     }
 }
-add_action('wp_ajax_wac_create_shortcode', 'WACCreateShortcode');
-add_action('wp_ajax_nopriv_wac_create_shortcode', 'WACCreateShortcode');
+add_action('wp_ajax_ess_create_shortcode', 'ESSCreateShortcode');
+add_action('wp_ajax_nopriv_ess_create_shortcode', 'ESSCreateShortcode');
 
