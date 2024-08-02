@@ -20,7 +20,7 @@ defined('ABSPATH') or die("Restricted access!");
 defined('SC_CORE_DIR') or define('SC_CORE_DIR', dirname(plugin_basename(__FILE__)));  // elementor-scaffolder
 defined('SC_CORE_BASE') or define('SC_CORE_BASE', plugin_basename(__FILE__));  // elementor-scaffolder/studio-core.php
 defined('SC_CORE_URL') or define('SC_CORE_URL', plugin_dir_url(__FILE__));  // http://test-elementor.local/wp-content/plugins/elementor-scaffolder/
-defined('SC_CORE_PATH') or define('SC_CORE_PATH', plugin_dir_path(__FILE__));  // C:\Users\Wac\Local Sites\test-elementor\app\public\wp-content\plugins\elementor-scaffolder/
+defined('SC_CORE_PATH') or define('SC_CORE_PATH', plugin_dir_path(__FILE__));  // C:\Users\local\Local Sites\test-elementor\app\public\wp-content\plugins\elementor-scaffolder/
 
 defined('SC_CORE_VERSION') or define('SC_CORE_VERSION', '1.0');
 
