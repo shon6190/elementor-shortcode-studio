@@ -13,7 +13,7 @@ class ShortCodeListpage {
      * Registering the scripts and styles for the events section
      */
     public function admin_includes_files() {
-        wp_enqueue_script('shortcode-js', SC_CORE_URL .'shortcodes-extend/shortcode.js' );
+        wp_enqueue_script('shortcode-js', SC_CORE_URL .'assets/js/shortcode.js' );
         wp_localize_script('shortcode-js', 'WACObj', array( 'loader_url' => SC_CORE_URL .'/shortcodes-extend/ajax-loader.svg' , 'ajaxurl' => admin_url('admin-ajax.php'), ));
     }
 
