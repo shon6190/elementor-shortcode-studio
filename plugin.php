@@ -18,6 +18,9 @@ class ShortcodeLoader
     public function __construct()
     {
         $this->shortcode_json_dir = SC_CORE_PATH . 'shortcodes-extend/ess-shortcode-jsons';
+        if (!is_dir($this->shortcode_json_dir)) {
+            mkdir($this->shortcode_json_dir, 0777, true);
+        }
         $this->load_files();
     }
 
